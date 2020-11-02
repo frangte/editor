@@ -1,0 +1,141 @@
+.ProseMirror .mathblock {
+  background: var(--default-back);
+  font-size: 0.8em;
+  margin: 0.5em 0;
+  border: 0px solid #ddd;
+}
+
+.ProseMirror .mathblock .katex-render {
+  font-family: "Fira Code", monospace;
+  cursor: pointer;
+  user-select: none;
+  background: var(--default-back);
+  transition: filter 60ms ease-in-out;
+}
+
+.ProseMirror .mathblock .katex-editor {
+  margin: 0;
+  padding: 1em;
+  overflow-x: auto;
+}
+
+.ProseMirror .mathblock .katex-render:hover {
+  filter: brightness(0.97);
+}
+
+.ProseMirror .mathblock .katex-render:active {
+  filter: brightness(0.94);
+}
+
+.ProseMirror .mathblock .katex-render .katex-display {
+  font-size: 1.25em;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.ProseMirror .mathblock .katex-render .katex-error   {
+  font-size: 1.00em;
+  display: inline-block;
+  width: 100%;
+  padding: 1em;
+  background-color: rgba(235, 87, 87, 0.2);
+  box-sizing: border-box;
+}
+
+
+.ProseMirror .mathblock pre code {
+  font-family: "Fira Code", monospace;
+}
+
+.MathBlock .katex-render {
+  display: flex;
+  flex: 0 0 100%;
+  box-sizing: border-box;
+  overflow-y: overlay;
+}
+
+.MathBlock .katex-editor {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  flex-grow: 1;
+  margin: 0 auto;
+}
+
+.MathBlock .katex-editor.hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.MathBlock .katex-editor.active {
+  position: static;
+
+  width: auto;
+  height: auto;
+  margin: 0;
+
+  clip: auto;
+  overflow: visible;
+}
+
+.MathBlock .katex-render .katex-error {
+  margin: 0 auto;
+  padding: 1em;
+  width: 100%;
+  font-family: "Fira Code", monospace;
+  font-size: 0.80em;
+}
+
+.katex-render .katex-display {
+  margin: 0 auto;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.katex-render .katex
+{
+  font-size: 1em;
+}
+
+.mathblock.ProseMirror-emptynode code::before {
+  content: "mathblock";
+  float: left;
+  pointer-events: none;
+  height: 0;
+}
+
+.mathblock .cm-linenumber.ProseMirror-widget {
+  display: inline-block;
+  margin-right: 0.5em;
+  color: #999;
+  user-select: none;
+  text-align: right;
+  width: 20px;
+}
+
+.mathblock .katex-editor code .cm-tag {
+  color: var(--default-gren);
+}
+
+.mathblock .katex-editor code .cm-bracket {
+  color: #997;
+}
+
+.mathblock .katex-editor code .cm-atom {
+  color: #219;
+}
+
+.mathblock .katex-editor code .cm-string {
+  color: #a11;
+}

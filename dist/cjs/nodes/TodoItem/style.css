@@ -1,0 +1,106 @@
+.ProseMirror li.todo-item .todo-checkbox {
+  --border: 000, 000, 000;
+  --box-fill: 1.5px;
+  --box-color: var(--border);
+}
+
+.ProseMirror li.todo-item .todo-checkbox:before {
+  content: "";
+  font-size: var(--font-size);
+  font-family: "Inter";
+  color: white;
+  display: inline-block;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(1.25em);
+  height: calc(1.25em);
+  border-radius: 2px;
+  transition: background-color 0.3s ease-in;
+  border: 0px solid transparent;
+}
+
+.ProseMirror li.todo-item .todo-checkbox:hover:before {
+  background-color: rgba(var(--border), 0.1);
+}
+
+.ProseMirror li.todo-item[data-checked="true"] > .todo-checkbox  {
+  --box-fill: 12px;
+  --box-color: 046, 170, 220;
+  background: rgb(046, 170, 220);
+}
+
+
+.ProseMirror li.todo-item .todo-checkbox {
+  width: calc(1.25em);
+  height: calc(1.25em);
+  margin: calc((var(--line-height) - 1) * var(--font-size) / 4) 0;
+  margin-right: calc((var(--line-height) - 1) * var(--font-size) / 2);
+  appearance: none;
+  outline: none;
+  background: transparent;
+  border: 1px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: box-shadow .3s;
+  box-shadow: 0 0 0 var(--box-fill, 1px) rgb(var(--box-color, --default-font)) inset;
+}
+
+.ProseMirror ul.todo-list {
+  padding-left: 0;
+}
+
+.ProseMirror li.todo-item {
+  display: flex;
+  flex-direction: row;
+  margin: 0.5em 0;
+}
+
+.ProseMirror li.todo-item .todo-checkbox {
+  flex-shrink: 0;
+  position: relative;
+  vertical-align: middle;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+
+.ProseMirror li.todo-item[data-checked="true"] > .todo-checkbox::before {
+  content: "✓";
+  background-color: rgb(46, 170, 220);
+  border: 0px solid rgb(46, 170, 220);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ProseMirror .todo-content > p {
+  margin-block-start: 0;
+}
+
+.ProseMirror li.todo-item .todo-content {
+  flex: 1;
+  width: 100%;
+  overflow: auto;
+  transition: color 0.3s ease-in;
+}
+
+.ProseMirror li.todo-item .todo-content p:last-of-type {
+  margin-bottom: 0;
+}
+
+.ProseMirror li.todo-item[data-checked="true"]  > .todo-content > *:first-child {
+  text-decoration: line-through;
+}
+
+.ProseMirror ul {
+  padding-inline-start: 1.5rem;
+}
+
+.ProseMirror ol {
+  padding-inline-start: 1.5rem;
+}
+
+.ProseMirror ul.todo-list .todo-checkbox {
+  margin-right: 0.25rem;
+}
